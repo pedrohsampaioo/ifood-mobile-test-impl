@@ -1,0 +1,12 @@
+{
+    "errors": [
+        {
+            "detail": "Could not find user with username: [TwitterDec].",
+            "title": "Not Found Error",
+            "resource_type": "user",
+            "parameter": "username",
+            "value": "TwitterDec",
+            "type": "https://api.twitter.com/2/problems/resource-not-found"
+        }
+    ]
+}
