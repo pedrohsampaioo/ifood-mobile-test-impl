@@ -16,8 +16,16 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$GetUserByUsernameFailureTearOff {
   const _$GetUserByUsernameFailureTearOff();
 
-  GetUserByUsernameFailureGeneral general() {
-    return const GetUserByUsernameFailureGeneral();
+  GetUserByUsernameFailureUnidentifiedHttpFailure unidentifiedHttpFailure() {
+    return const GetUserByUsernameFailureUnidentifiedHttpFailure();
+  }
+
+  GetUserByUsernameFailureRateLimiteExceeded rateLimiteExceeded() {
+    return const GetUserByUsernameFailureRateLimiteExceeded();
+  }
+
+  GetUserByUsernameFailureUserNotFound userNotFound() {
+    return const GetUserByUsernameFailureUserNotFound();
   }
 }
 
@@ -28,23 +36,37 @@ const $GetUserByUsernameFailure = _$GetUserByUsernameFailureTearOff();
 mixin _$GetUserByUsernameFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() general,
+    required TResult Function() unidentifiedHttpFailure,
+    required TResult Function() rateLimiteExceeded,
+    required TResult Function() userNotFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? general,
+    TResult Function()? unidentifiedHttpFailure,
+    TResult Function()? rateLimiteExceeded,
+    TResult Function()? userNotFound,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(GetUserByUsernameFailureGeneral value) general,
+    required TResult Function(
+            GetUserByUsernameFailureUnidentifiedHttpFailure value)
+        unidentifiedHttpFailure,
+    required TResult Function(GetUserByUsernameFailureRateLimiteExceeded value)
+        rateLimiteExceeded,
+    required TResult Function(GetUserByUsernameFailureUserNotFound value)
+        userNotFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(GetUserByUsernameFailureGeneral value)? general,
+    TResult Function(GetUserByUsernameFailureUnidentifiedHttpFailure value)?
+        unidentifiedHttpFailure,
+    TResult Function(GetUserByUsernameFailureRateLimiteExceeded value)?
+        rateLimiteExceeded,
+    TResult Function(GetUserByUsernameFailureUserNotFound value)? userNotFound,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -68,40 +90,42 @@ class _$GetUserByUsernameFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $GetUserByUsernameFailureGeneralCopyWith<$Res> {
-  factory $GetUserByUsernameFailureGeneralCopyWith(
-          GetUserByUsernameFailureGeneral value,
-          $Res Function(GetUserByUsernameFailureGeneral) then) =
-      _$GetUserByUsernameFailureGeneralCopyWithImpl<$Res>;
+abstract class $GetUserByUsernameFailureUnidentifiedHttpFailureCopyWith<$Res> {
+  factory $GetUserByUsernameFailureUnidentifiedHttpFailureCopyWith(
+          GetUserByUsernameFailureUnidentifiedHttpFailure value,
+          $Res Function(GetUserByUsernameFailureUnidentifiedHttpFailure) then) =
+      _$GetUserByUsernameFailureUnidentifiedHttpFailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$GetUserByUsernameFailureGeneralCopyWithImpl<$Res>
+class _$GetUserByUsernameFailureUnidentifiedHttpFailureCopyWithImpl<$Res>
     extends _$GetUserByUsernameFailureCopyWithImpl<$Res>
-    implements $GetUserByUsernameFailureGeneralCopyWith<$Res> {
-  _$GetUserByUsernameFailureGeneralCopyWithImpl(
-      GetUserByUsernameFailureGeneral _value,
-      $Res Function(GetUserByUsernameFailureGeneral) _then)
-      : super(_value, (v) => _then(v as GetUserByUsernameFailureGeneral));
+    implements $GetUserByUsernameFailureUnidentifiedHttpFailureCopyWith<$Res> {
+  _$GetUserByUsernameFailureUnidentifiedHttpFailureCopyWithImpl(
+      GetUserByUsernameFailureUnidentifiedHttpFailure _value,
+      $Res Function(GetUserByUsernameFailureUnidentifiedHttpFailure) _then)
+      : super(_value,
+            (v) => _then(v as GetUserByUsernameFailureUnidentifiedHttpFailure));
 
   @override
-  GetUserByUsernameFailureGeneral get _value =>
-      super._value as GetUserByUsernameFailureGeneral;
+  GetUserByUsernameFailureUnidentifiedHttpFailure get _value =>
+      super._value as GetUserByUsernameFailureUnidentifiedHttpFailure;
 }
 
 /// @nodoc
-class _$GetUserByUsernameFailureGeneral
-    implements GetUserByUsernameFailureGeneral {
-  const _$GetUserByUsernameFailureGeneral();
+class _$GetUserByUsernameFailureUnidentifiedHttpFailure
+    implements GetUserByUsernameFailureUnidentifiedHttpFailure {
+  const _$GetUserByUsernameFailureUnidentifiedHttpFailure();
 
   @override
   String toString() {
-    return 'GetUserByUsernameFailure.general()';
+    return 'GetUserByUsernameFailure.unidentifiedHttpFailure()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is GetUserByUsernameFailureGeneral);
+    return identical(this, other) ||
+        (other is GetUserByUsernameFailureUnidentifiedHttpFailure);
   }
 
   @override
@@ -110,19 +134,23 @@ class _$GetUserByUsernameFailureGeneral
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() general,
+    required TResult Function() unidentifiedHttpFailure,
+    required TResult Function() rateLimiteExceeded,
+    required TResult Function() userNotFound,
   }) {
-    return general();
+    return unidentifiedHttpFailure();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? general,
+    TResult Function()? unidentifiedHttpFailure,
+    TResult Function()? rateLimiteExceeded,
+    TResult Function()? userNotFound,
     required TResult orElse(),
   }) {
-    if (general != null) {
-      return general();
+    if (unidentifiedHttpFailure != null) {
+      return unidentifiedHttpFailure();
     }
     return orElse();
   }
@@ -130,26 +158,241 @@ class _$GetUserByUsernameFailureGeneral
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(GetUserByUsernameFailureGeneral value) general,
+    required TResult Function(
+            GetUserByUsernameFailureUnidentifiedHttpFailure value)
+        unidentifiedHttpFailure,
+    required TResult Function(GetUserByUsernameFailureRateLimiteExceeded value)
+        rateLimiteExceeded,
+    required TResult Function(GetUserByUsernameFailureUserNotFound value)
+        userNotFound,
   }) {
-    return general(this);
+    return unidentifiedHttpFailure(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(GetUserByUsernameFailureGeneral value)? general,
+    TResult Function(GetUserByUsernameFailureUnidentifiedHttpFailure value)?
+        unidentifiedHttpFailure,
+    TResult Function(GetUserByUsernameFailureRateLimiteExceeded value)?
+        rateLimiteExceeded,
+    TResult Function(GetUserByUsernameFailureUserNotFound value)? userNotFound,
     required TResult orElse(),
   }) {
-    if (general != null) {
-      return general(this);
+    if (unidentifiedHttpFailure != null) {
+      return unidentifiedHttpFailure(this);
     }
     return orElse();
   }
 }
 
-abstract class GetUserByUsernameFailureGeneral
+abstract class GetUserByUsernameFailureUnidentifiedHttpFailure
     implements GetUserByUsernameFailure {
-  const factory GetUserByUsernameFailureGeneral() =
-      _$GetUserByUsernameFailureGeneral;
+  const factory GetUserByUsernameFailureUnidentifiedHttpFailure() =
+      _$GetUserByUsernameFailureUnidentifiedHttpFailure;
+}
+
+/// @nodoc
+abstract class $GetUserByUsernameFailureRateLimiteExceededCopyWith<$Res> {
+  factory $GetUserByUsernameFailureRateLimiteExceededCopyWith(
+          GetUserByUsernameFailureRateLimiteExceeded value,
+          $Res Function(GetUserByUsernameFailureRateLimiteExceeded) then) =
+      _$GetUserByUsernameFailureRateLimiteExceededCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$GetUserByUsernameFailureRateLimiteExceededCopyWithImpl<$Res>
+    extends _$GetUserByUsernameFailureCopyWithImpl<$Res>
+    implements $GetUserByUsernameFailureRateLimiteExceededCopyWith<$Res> {
+  _$GetUserByUsernameFailureRateLimiteExceededCopyWithImpl(
+      GetUserByUsernameFailureRateLimiteExceeded _value,
+      $Res Function(GetUserByUsernameFailureRateLimiteExceeded) _then)
+      : super(_value,
+            (v) => _then(v as GetUserByUsernameFailureRateLimiteExceeded));
+
+  @override
+  GetUserByUsernameFailureRateLimiteExceeded get _value =>
+      super._value as GetUserByUsernameFailureRateLimiteExceeded;
+}
+
+/// @nodoc
+class _$GetUserByUsernameFailureRateLimiteExceeded
+    implements GetUserByUsernameFailureRateLimiteExceeded {
+  const _$GetUserByUsernameFailureRateLimiteExceeded();
+
+  @override
+  String toString() {
+    return 'GetUserByUsernameFailure.rateLimiteExceeded()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is GetUserByUsernameFailureRateLimiteExceeded);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() unidentifiedHttpFailure,
+    required TResult Function() rateLimiteExceeded,
+    required TResult Function() userNotFound,
+  }) {
+    return rateLimiteExceeded();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unidentifiedHttpFailure,
+    TResult Function()? rateLimiteExceeded,
+    TResult Function()? userNotFound,
+    required TResult orElse(),
+  }) {
+    if (rateLimiteExceeded != null) {
+      return rateLimiteExceeded();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(
+            GetUserByUsernameFailureUnidentifiedHttpFailure value)
+        unidentifiedHttpFailure,
+    required TResult Function(GetUserByUsernameFailureRateLimiteExceeded value)
+        rateLimiteExceeded,
+    required TResult Function(GetUserByUsernameFailureUserNotFound value)
+        userNotFound,
+  }) {
+    return rateLimiteExceeded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetUserByUsernameFailureUnidentifiedHttpFailure value)?
+        unidentifiedHttpFailure,
+    TResult Function(GetUserByUsernameFailureRateLimiteExceeded value)?
+        rateLimiteExceeded,
+    TResult Function(GetUserByUsernameFailureUserNotFound value)? userNotFound,
+    required TResult orElse(),
+  }) {
+    if (rateLimiteExceeded != null) {
+      return rateLimiteExceeded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetUserByUsernameFailureRateLimiteExceeded
+    implements GetUserByUsernameFailure {
+  const factory GetUserByUsernameFailureRateLimiteExceeded() =
+      _$GetUserByUsernameFailureRateLimiteExceeded;
+}
+
+/// @nodoc
+abstract class $GetUserByUsernameFailureUserNotFoundCopyWith<$Res> {
+  factory $GetUserByUsernameFailureUserNotFoundCopyWith(
+          GetUserByUsernameFailureUserNotFound value,
+          $Res Function(GetUserByUsernameFailureUserNotFound) then) =
+      _$GetUserByUsernameFailureUserNotFoundCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$GetUserByUsernameFailureUserNotFoundCopyWithImpl<$Res>
+    extends _$GetUserByUsernameFailureCopyWithImpl<$Res>
+    implements $GetUserByUsernameFailureUserNotFoundCopyWith<$Res> {
+  _$GetUserByUsernameFailureUserNotFoundCopyWithImpl(
+      GetUserByUsernameFailureUserNotFound _value,
+      $Res Function(GetUserByUsernameFailureUserNotFound) _then)
+      : super(_value, (v) => _then(v as GetUserByUsernameFailureUserNotFound));
+
+  @override
+  GetUserByUsernameFailureUserNotFound get _value =>
+      super._value as GetUserByUsernameFailureUserNotFound;
+}
+
+/// @nodoc
+class _$GetUserByUsernameFailureUserNotFound
+    implements GetUserByUsernameFailureUserNotFound {
+  const _$GetUserByUsernameFailureUserNotFound();
+
+  @override
+  String toString() {
+    return 'GetUserByUsernameFailure.userNotFound()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is GetUserByUsernameFailureUserNotFound);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() unidentifiedHttpFailure,
+    required TResult Function() rateLimiteExceeded,
+    required TResult Function() userNotFound,
+  }) {
+    return userNotFound();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unidentifiedHttpFailure,
+    TResult Function()? rateLimiteExceeded,
+    TResult Function()? userNotFound,
+    required TResult orElse(),
+  }) {
+    if (userNotFound != null) {
+      return userNotFound();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(
+            GetUserByUsernameFailureUnidentifiedHttpFailure value)
+        unidentifiedHttpFailure,
+    required TResult Function(GetUserByUsernameFailureRateLimiteExceeded value)
+        rateLimiteExceeded,
+    required TResult Function(GetUserByUsernameFailureUserNotFound value)
+        userNotFound,
+  }) {
+    return userNotFound(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetUserByUsernameFailureUnidentifiedHttpFailure value)?
+        unidentifiedHttpFailure,
+    TResult Function(GetUserByUsernameFailureRateLimiteExceeded value)?
+        rateLimiteExceeded,
+    TResult Function(GetUserByUsernameFailureUserNotFound value)? userNotFound,
+    required TResult orElse(),
+  }) {
+    if (userNotFound != null) {
+      return userNotFound(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetUserByUsernameFailureUserNotFound
+    implements GetUserByUsernameFailure {
+  const factory GetUserByUsernameFailureUserNotFound() =
+      _$GetUserByUsernameFailureUserNotFound;
 }

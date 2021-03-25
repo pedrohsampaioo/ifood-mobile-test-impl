@@ -6,6 +6,10 @@ part 'get_user_by_username_failure.freezed.dart';
 
 @freezed
 abstract class GetUserByUsernameFailure implements Failure {
-  const factory GetUserByUsernameFailure.general() =
-      GetUserByUsernameFailureGeneral;
+  const factory GetUserByUsernameFailure.unidentifiedHttpFailure() =
+      GetUserByUsernameFailureUnidentifiedHttpFailure;
+  const factory GetUserByUsernameFailure.rateLimiteExceeded() =
+      GetUserByUsernameFailureRateLimiteExceeded;
+  const factory GetUserByUsernameFailure.userNotFound() =
+      GetUserByUsernameFailureUserNotFound;
 }

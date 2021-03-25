@@ -16,8 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$GetPostsByIdFailureTearOff {
   const _$GetPostsByIdFailureTearOff();
 
-  GetPostsByIdFailureGeneral general() {
-    return const GetPostsByIdFailureGeneral();
+  GetPostsByIdFailureUnidentifiedHttpFailure unidentifiedHttpFailure() {
+    return const GetPostsByIdFailureUnidentifiedHttpFailure();
   }
 }
 
@@ -28,23 +28,25 @@ const $GetPostsByIdFailure = _$GetPostsByIdFailureTearOff();
 mixin _$GetPostsByIdFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() general,
+    required TResult Function() unidentifiedHttpFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? general,
+    TResult Function()? unidentifiedHttpFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(GetPostsByIdFailureGeneral value) general,
+    required TResult Function(GetPostsByIdFailureUnidentifiedHttpFailure value)
+        unidentifiedHttpFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(GetPostsByIdFailureGeneral value)? general,
+    TResult Function(GetPostsByIdFailureUnidentifiedHttpFailure value)?
+        unidentifiedHttpFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -68,37 +70,42 @@ class _$GetPostsByIdFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $GetPostsByIdFailureGeneralCopyWith<$Res> {
-  factory $GetPostsByIdFailureGeneralCopyWith(GetPostsByIdFailureGeneral value,
-          $Res Function(GetPostsByIdFailureGeneral) then) =
-      _$GetPostsByIdFailureGeneralCopyWithImpl<$Res>;
+abstract class $GetPostsByIdFailureUnidentifiedHttpFailureCopyWith<$Res> {
+  factory $GetPostsByIdFailureUnidentifiedHttpFailureCopyWith(
+          GetPostsByIdFailureUnidentifiedHttpFailure value,
+          $Res Function(GetPostsByIdFailureUnidentifiedHttpFailure) then) =
+      _$GetPostsByIdFailureUnidentifiedHttpFailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$GetPostsByIdFailureGeneralCopyWithImpl<$Res>
+class _$GetPostsByIdFailureUnidentifiedHttpFailureCopyWithImpl<$Res>
     extends _$GetPostsByIdFailureCopyWithImpl<$Res>
-    implements $GetPostsByIdFailureGeneralCopyWith<$Res> {
-  _$GetPostsByIdFailureGeneralCopyWithImpl(GetPostsByIdFailureGeneral _value,
-      $Res Function(GetPostsByIdFailureGeneral) _then)
-      : super(_value, (v) => _then(v as GetPostsByIdFailureGeneral));
+    implements $GetPostsByIdFailureUnidentifiedHttpFailureCopyWith<$Res> {
+  _$GetPostsByIdFailureUnidentifiedHttpFailureCopyWithImpl(
+      GetPostsByIdFailureUnidentifiedHttpFailure _value,
+      $Res Function(GetPostsByIdFailureUnidentifiedHttpFailure) _then)
+      : super(_value,
+            (v) => _then(v as GetPostsByIdFailureUnidentifiedHttpFailure));
 
   @override
-  GetPostsByIdFailureGeneral get _value =>
-      super._value as GetPostsByIdFailureGeneral;
+  GetPostsByIdFailureUnidentifiedHttpFailure get _value =>
+      super._value as GetPostsByIdFailureUnidentifiedHttpFailure;
 }
 
 /// @nodoc
-class _$GetPostsByIdFailureGeneral implements GetPostsByIdFailureGeneral {
-  const _$GetPostsByIdFailureGeneral();
+class _$GetPostsByIdFailureUnidentifiedHttpFailure
+    implements GetPostsByIdFailureUnidentifiedHttpFailure {
+  const _$GetPostsByIdFailureUnidentifiedHttpFailure();
 
   @override
   String toString() {
-    return 'GetPostsByIdFailure.general()';
+    return 'GetPostsByIdFailure.unidentifiedHttpFailure()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is GetPostsByIdFailureGeneral);
+    return identical(this, other) ||
+        (other is GetPostsByIdFailureUnidentifiedHttpFailure);
   }
 
   @override
@@ -107,19 +114,19 @@ class _$GetPostsByIdFailureGeneral implements GetPostsByIdFailureGeneral {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() general,
+    required TResult Function() unidentifiedHttpFailure,
   }) {
-    return general();
+    return unidentifiedHttpFailure();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? general,
+    TResult Function()? unidentifiedHttpFailure,
     required TResult orElse(),
   }) {
-    if (general != null) {
-      return general();
+    if (unidentifiedHttpFailure != null) {
+      return unidentifiedHttpFailure();
     }
     return orElse();
   }
@@ -127,24 +134,28 @@ class _$GetPostsByIdFailureGeneral implements GetPostsByIdFailureGeneral {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(GetPostsByIdFailureGeneral value) general,
+    required TResult Function(GetPostsByIdFailureUnidentifiedHttpFailure value)
+        unidentifiedHttpFailure,
   }) {
-    return general(this);
+    return unidentifiedHttpFailure(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(GetPostsByIdFailureGeneral value)? general,
+    TResult Function(GetPostsByIdFailureUnidentifiedHttpFailure value)?
+        unidentifiedHttpFailure,
     required TResult orElse(),
   }) {
-    if (general != null) {
-      return general(this);
+    if (unidentifiedHttpFailure != null) {
+      return unidentifiedHttpFailure(this);
     }
     return orElse();
   }
 }
 
-abstract class GetPostsByIdFailureGeneral implements GetPostsByIdFailure {
-  const factory GetPostsByIdFailureGeneral() = _$GetPostsByIdFailureGeneral;
+abstract class GetPostsByIdFailureUnidentifiedHttpFailure
+    implements GetPostsByIdFailure {
+  const factory GetPostsByIdFailureUnidentifiedHttpFailure() =
+      _$GetPostsByIdFailureUnidentifiedHttpFailure;
 }
