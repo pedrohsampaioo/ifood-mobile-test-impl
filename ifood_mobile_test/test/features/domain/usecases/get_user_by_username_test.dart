@@ -23,7 +23,7 @@ main() {
     () {
       final futureToReturn =
           Future<Either<GetUserByUsernameFailure, UserEntity>>.sync(
-        () => right(UserEntity()),
+        () => right(UserEntity(username: 'username', id: 'id', name: 'name')),
       );
       final params = GetUserByUsernameParams(username: 'username');
       when(() => _twitterServiceMock.getUserByUsername(any()))
