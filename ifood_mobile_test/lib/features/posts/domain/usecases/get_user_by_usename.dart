@@ -2,20 +2,20 @@ import 'package:dartz/dartz.dart';
 
 import '../entities/user_entity.dart';
 import '../failures/get_user_by_username_failure.dart';
-import '../services/twitter_repository.dart';
+import '../services/twitter_service.dart';
 import 'usecase.dart';
 
 class GetUserByUsername extends UsecaseWithFailure<GetUserByUsernameParams,
     GetUserByUsernameFailure, UserEntity> {
-  final TwitterRepository _twitterRepository;
+  final TwitterService _twitterService;
 
-  const GetUserByUsername(this._twitterRepository);
+  const GetUserByUsername(this._twitterService);
 
   @override
   Future<Either<GetUserByUsernameFailure, UserEntity>> call(
     GetUserByUsernameParams params,
   ) {
-    return _twitterRepository.getUserByUsername(params.username);
+    return _twitterService.getUserByUsername(params.username);
   }
 }
 
