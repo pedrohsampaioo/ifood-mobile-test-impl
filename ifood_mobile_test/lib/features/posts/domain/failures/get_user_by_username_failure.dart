@@ -1,0 +1,11 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+import 'failure.dart';
+
+part 'get_user_by_username_failure.freezed.dart';
+
+@freezed
+abstract class GetUserByUsernameFailure implements Failure {
+  const factory GetUserByUsernameFailure.general() =
+      GetUserByUsernameFailureGeneral;
+}

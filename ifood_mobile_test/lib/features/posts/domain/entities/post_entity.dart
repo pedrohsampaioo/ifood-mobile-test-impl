@@ -1,0 +1,3 @@
+class PostEntity {
+  const PostEntity();
+}
