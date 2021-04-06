@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:http/http.dart' show BaseClient, Response;
+import 'package:http/http.dart' show Response;
+import 'package:ifood_mobile_test/core/config/http/http_twitter_authenticator_decorator.dart';
 import 'package:ifood_mobile_test/features/posts/domain/entities/post_entity.dart';
 import 'package:ifood_mobile_test/features/posts/domain/entities/user_entity.dart';
 import 'package:ifood_mobile_test/features/posts/domain/failures/get_posts_by_id_failure.dart';
@@ -10,7 +11,8 @@ import 'package:mocktail/mocktail.dart';
 
 import '../../../../fixtures/fixture_reader.dart';
 
-class HttpClientMock extends Mock implements BaseClient {}
+class HttpClientMock extends Mock implements HttpTwitterAuthenticatorDecorator {
+}
 
 main() {
   late HttpClientMock _httpClient;
@@ -28,9 +30,10 @@ main() {
 
     setUp(() {
       id = '292383655';
-      urlUri = Uri.parse('https://api.twitter.com/2/users/$id/tweets');
+      urlUri = Uri.parse('/2/users/$id/tweets');
       headers = {
-        "content-type": "application/json; charset=utf-8",
+        'content-type': 'application/json; '
+            'application=x-www-form-urlencoded; charset=utf-8',
       };
     });
     group('success cases', () {
@@ -81,8 +84,7 @@ main() {
 
     setUp(() {
       username = 'username';
-      urlUri =
-          Uri.parse('https://api.twitter.com/2/users/by/username/$username');
+      urlUri = Uri.parse('/2/users/by/username/$username');
     });
     group('success cases', () {
       test(

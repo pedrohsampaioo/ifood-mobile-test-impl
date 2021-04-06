@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
-import 'package:http/http.dart' show BaseClient;
 
+import '../../../../core/config/http/http_twitter_authenticator_decorator.dart';
 import '../../domain/entities/post_entity.dart';
 import '../../domain/entities/user_entity.dart';
 import '../../domain/failures/get_posts_by_id_failure.dart';
@@ -12,7 +12,7 @@ import '../models/post_model.dart';
 import '../models/user_model.dart';
 
 class TwitterServiceImpl extends TwitterService {
-  final BaseClient _httpClient;
+  final HttpTwitterAuthenticatorDecorator _httpClient;
 
   const TwitterServiceImpl(this._httpClient);
 
@@ -21,7 +21,7 @@ class TwitterServiceImpl extends TwitterService {
     String id,
   ) async {
     final response = await _httpClient.get(
-      Uri.parse('https://api.twitter.com/2/users/$id/tweets'),
+      Uri.parse('/2/users/$id/tweets'),
     );
     if (response.statusCode == 200) {
       final json = jsonDecode(response.body)['data'] as List<dynamic>;
@@ -40,7 +40,7 @@ class TwitterServiceImpl extends TwitterService {
     String username,
   ) async {
     final response = await _httpClient.get(
-      Uri.parse('https://api.twitter.com/2/users/by/username/$username'),
+      Uri.parse('/2/users/by/username/$username'),
     );
     if (response.statusCode == 200) {
       final json = jsonDecode(response.body) as Map<String, dynamic>;
