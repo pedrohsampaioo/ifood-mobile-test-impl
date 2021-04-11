@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
 
-import '../../../../core/config/http/http_twitter_authenticator_decorator.dart';
+import '../http_config/http_twitter_authenticator_decorator.dart';
 import '../../domain/entities/post_entity.dart';
 import '../../domain/entities/user_entity.dart';
 import '../../domain/failures/get_posts_by_id_failure.dart';
@@ -24,13 +24,25 @@ class TwitterServiceImpl extends TwitterService {
       Uri.parse('/2/users/$id/tweets'),
     );
     if (response.statusCode == 200) {
-      final json = jsonDecode(response.body)['data'] as List<dynamic>;
-      final posts = json
-          .map<PostModel>(
-            (post) => PostModel.fromJson(post),
-          )
-          .toList();
-      return right(posts);
+      final json = jsonDecode(response.body) as Map<String, dynamic>;
+      if (!json.containsKey('errors')) {
+        final postsJson = jsonDecode(response.body)['data'] as List<dynamic>;
+        final posts = postsJson
+            .map<PostModel>(
+              (post) => PostModel.fromJson(post),
+            )
+            .toList();
+        return right(posts);
+      }
+      if (json.containsKey('title') && json['title'] == "Invalid Request") {
+        return left(GetPostsByIdFailure.invalidPatternId());
+      }
+      final isUserNotFound = List<Map<String, dynamic>>.from(json['errors'])
+          .map<String>((value) => value['title'])
+          .contains('Not Found Error');
+      if (isUserNotFound) {
+        return left(GetPostsByIdFailure.userNotFound());
+      }
     }
     return left(GetPostsByIdFailure.unidentifiedHttpFailure());
   }

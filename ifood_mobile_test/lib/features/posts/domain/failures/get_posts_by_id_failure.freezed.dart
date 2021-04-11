@@ -19,6 +19,14 @@ class _$GetPostsByIdFailureTearOff {
   GetPostsByIdFailureUnidentifiedHttpFailure unidentifiedHttpFailure() {
     return const GetPostsByIdFailureUnidentifiedHttpFailure();
   }
+
+  GetPostsByIdFailureInvalidPatternId invalidPatternId() {
+    return const GetPostsByIdFailureInvalidPatternId();
+  }
+
+  GetPostsByIdFailureUserNotFound userNotFound() {
+    return const GetPostsByIdFailureUserNotFound();
+  }
 }
 
 /// @nodoc
@@ -29,11 +37,15 @@ mixin _$GetPostsByIdFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() unidentifiedHttpFailure,
+    required TResult Function() invalidPatternId,
+    required TResult Function() userNotFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unidentifiedHttpFailure,
+    TResult Function()? invalidPatternId,
+    TResult Function()? userNotFound,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -41,12 +53,19 @@ mixin _$GetPostsByIdFailure {
   TResult map<TResult extends Object?>({
     required TResult Function(GetPostsByIdFailureUnidentifiedHttpFailure value)
         unidentifiedHttpFailure,
+    required TResult Function(GetPostsByIdFailureInvalidPatternId value)
+        invalidPatternId,
+    required TResult Function(GetPostsByIdFailureUserNotFound value)
+        userNotFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetPostsByIdFailureUnidentifiedHttpFailure value)?
         unidentifiedHttpFailure,
+    TResult Function(GetPostsByIdFailureInvalidPatternId value)?
+        invalidPatternId,
+    TResult Function(GetPostsByIdFailureUserNotFound value)? userNotFound,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -115,6 +134,8 @@ class _$GetPostsByIdFailureUnidentifiedHttpFailure
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() unidentifiedHttpFailure,
+    required TResult Function() invalidPatternId,
+    required TResult Function() userNotFound,
   }) {
     return unidentifiedHttpFailure();
   }
@@ -123,6 +144,8 @@ class _$GetPostsByIdFailureUnidentifiedHttpFailure
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unidentifiedHttpFailure,
+    TResult Function()? invalidPatternId,
+    TResult Function()? userNotFound,
     required TResult orElse(),
   }) {
     if (unidentifiedHttpFailure != null) {
@@ -136,6 +159,10 @@ class _$GetPostsByIdFailureUnidentifiedHttpFailure
   TResult map<TResult extends Object?>({
     required TResult Function(GetPostsByIdFailureUnidentifiedHttpFailure value)
         unidentifiedHttpFailure,
+    required TResult Function(GetPostsByIdFailureInvalidPatternId value)
+        invalidPatternId,
+    required TResult Function(GetPostsByIdFailureUserNotFound value)
+        userNotFound,
   }) {
     return unidentifiedHttpFailure(this);
   }
@@ -145,6 +172,9 @@ class _$GetPostsByIdFailureUnidentifiedHttpFailure
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetPostsByIdFailureUnidentifiedHttpFailure value)?
         unidentifiedHttpFailure,
+    TResult Function(GetPostsByIdFailureInvalidPatternId value)?
+        invalidPatternId,
+    TResult Function(GetPostsByIdFailureUserNotFound value)? userNotFound,
     required TResult orElse(),
   }) {
     if (unidentifiedHttpFailure != null) {
@@ -158,4 +188,204 @@ abstract class GetPostsByIdFailureUnidentifiedHttpFailure
     implements GetPostsByIdFailure {
   const factory GetPostsByIdFailureUnidentifiedHttpFailure() =
       _$GetPostsByIdFailureUnidentifiedHttpFailure;
+}
+
+/// @nodoc
+abstract class $GetPostsByIdFailureInvalidPatternIdCopyWith<$Res> {
+  factory $GetPostsByIdFailureInvalidPatternIdCopyWith(
+          GetPostsByIdFailureInvalidPatternId value,
+          $Res Function(GetPostsByIdFailureInvalidPatternId) then) =
+      _$GetPostsByIdFailureInvalidPatternIdCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$GetPostsByIdFailureInvalidPatternIdCopyWithImpl<$Res>
+    extends _$GetPostsByIdFailureCopyWithImpl<$Res>
+    implements $GetPostsByIdFailureInvalidPatternIdCopyWith<$Res> {
+  _$GetPostsByIdFailureInvalidPatternIdCopyWithImpl(
+      GetPostsByIdFailureInvalidPatternId _value,
+      $Res Function(GetPostsByIdFailureInvalidPatternId) _then)
+      : super(_value, (v) => _then(v as GetPostsByIdFailureInvalidPatternId));
+
+  @override
+  GetPostsByIdFailureInvalidPatternId get _value =>
+      super._value as GetPostsByIdFailureInvalidPatternId;
+}
+
+/// @nodoc
+class _$GetPostsByIdFailureInvalidPatternId
+    implements GetPostsByIdFailureInvalidPatternId {
+  const _$GetPostsByIdFailureInvalidPatternId();
+
+  @override
+  String toString() {
+    return 'GetPostsByIdFailure.invalidPatternId()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is GetPostsByIdFailureInvalidPatternId);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() unidentifiedHttpFailure,
+    required TResult Function() invalidPatternId,
+    required TResult Function() userNotFound,
+  }) {
+    return invalidPatternId();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unidentifiedHttpFailure,
+    TResult Function()? invalidPatternId,
+    TResult Function()? userNotFound,
+    required TResult orElse(),
+  }) {
+    if (invalidPatternId != null) {
+      return invalidPatternId();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetPostsByIdFailureUnidentifiedHttpFailure value)
+        unidentifiedHttpFailure,
+    required TResult Function(GetPostsByIdFailureInvalidPatternId value)
+        invalidPatternId,
+    required TResult Function(GetPostsByIdFailureUserNotFound value)
+        userNotFound,
+  }) {
+    return invalidPatternId(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetPostsByIdFailureUnidentifiedHttpFailure value)?
+        unidentifiedHttpFailure,
+    TResult Function(GetPostsByIdFailureInvalidPatternId value)?
+        invalidPatternId,
+    TResult Function(GetPostsByIdFailureUserNotFound value)? userNotFound,
+    required TResult orElse(),
+  }) {
+    if (invalidPatternId != null) {
+      return invalidPatternId(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetPostsByIdFailureInvalidPatternId
+    implements GetPostsByIdFailure {
+  const factory GetPostsByIdFailureInvalidPatternId() =
+      _$GetPostsByIdFailureInvalidPatternId;
+}
+
+/// @nodoc
+abstract class $GetPostsByIdFailureUserNotFoundCopyWith<$Res> {
+  factory $GetPostsByIdFailureUserNotFoundCopyWith(
+          GetPostsByIdFailureUserNotFound value,
+          $Res Function(GetPostsByIdFailureUserNotFound) then) =
+      _$GetPostsByIdFailureUserNotFoundCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$GetPostsByIdFailureUserNotFoundCopyWithImpl<$Res>
+    extends _$GetPostsByIdFailureCopyWithImpl<$Res>
+    implements $GetPostsByIdFailureUserNotFoundCopyWith<$Res> {
+  _$GetPostsByIdFailureUserNotFoundCopyWithImpl(
+      GetPostsByIdFailureUserNotFound _value,
+      $Res Function(GetPostsByIdFailureUserNotFound) _then)
+      : super(_value, (v) => _then(v as GetPostsByIdFailureUserNotFound));
+
+  @override
+  GetPostsByIdFailureUserNotFound get _value =>
+      super._value as GetPostsByIdFailureUserNotFound;
+}
+
+/// @nodoc
+class _$GetPostsByIdFailureUserNotFound
+    implements GetPostsByIdFailureUserNotFound {
+  const _$GetPostsByIdFailureUserNotFound();
+
+  @override
+  String toString() {
+    return 'GetPostsByIdFailure.userNotFound()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is GetPostsByIdFailureUserNotFound);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() unidentifiedHttpFailure,
+    required TResult Function() invalidPatternId,
+    required TResult Function() userNotFound,
+  }) {
+    return userNotFound();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unidentifiedHttpFailure,
+    TResult Function()? invalidPatternId,
+    TResult Function()? userNotFound,
+    required TResult orElse(),
+  }) {
+    if (userNotFound != null) {
+      return userNotFound();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetPostsByIdFailureUnidentifiedHttpFailure value)
+        unidentifiedHttpFailure,
+    required TResult Function(GetPostsByIdFailureInvalidPatternId value)
+        invalidPatternId,
+    required TResult Function(GetPostsByIdFailureUserNotFound value)
+        userNotFound,
+  }) {
+    return userNotFound(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetPostsByIdFailureUnidentifiedHttpFailure value)?
+        unidentifiedHttpFailure,
+    TResult Function(GetPostsByIdFailureInvalidPatternId value)?
+        invalidPatternId,
+    TResult Function(GetPostsByIdFailureUserNotFound value)? userNotFound,
+    required TResult orElse(),
+  }) {
+    if (userNotFound != null) {
+      return userNotFound(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetPostsByIdFailureUserNotFound implements GetPostsByIdFailure {
+  const factory GetPostsByIdFailureUserNotFound() =
+      _$GetPostsByIdFailureUserNotFound;
 }
