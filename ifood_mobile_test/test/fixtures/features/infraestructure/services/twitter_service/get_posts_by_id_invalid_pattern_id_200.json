@@ -1,0 +1,15 @@
+{
+    "errors": [
+        {
+            "parameters": {
+                "id": [
+                    "55555555sa555"
+                ]
+            },
+            "message": "The `id` query parameter value [55555555sa555] does not match ^[0-9]{1,19}$"
+        }
+    ],
+    "title": "Invalid Request",
+    "detail": "One or more parameters to your request was invalid.",
+    "type": "https://api.twitter.com/2/problems/invalid-request"
+}
