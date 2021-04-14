@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ifood_mobile_test/shared/theme/app_theme.dart';
+
+import '../../../../shared/theme/app_theme.dart';
 
 class ErrorWidget extends StatelessWidget {
   final String message;

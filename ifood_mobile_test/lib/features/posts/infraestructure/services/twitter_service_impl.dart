@@ -2,12 +2,12 @@ import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
 
-import '../http_config/http_twitter_authenticator_decorator.dart';
 import '../../domain/entities/post_entity.dart';
 import '../../domain/entities/user_entity.dart';
 import '../../domain/failures/get_posts_by_id_failure.dart';
 import '../../domain/failures/get_user_by_username_failure.dart';
 import '../../domain/services/twitter_service.dart';
+import '../http_config/http_twitter_authenticator_decorator.dart';
 import '../models/post_model.dart';
 import '../models/user_model.dart';
 

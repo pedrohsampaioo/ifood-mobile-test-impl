@@ -11,9 +11,10 @@ import '../../infraestructure/http_config/http_google_language_decorator.dart';
 import '../../infraestructure/http_config/http_twitter_authenticator_decorator.dart';
 import '../../infraestructure/services/google_language_service_impl.dart';
 import '../../infraestructure/services/twitter_service_impl.dart';
+import '../application/analyse_posts/analyse_posts_state_notifier.dart';
 import '../application/get_posts_by_id/get_posts_by_id_state_notifier.dart';
 import '../application/get_user_by_username/get_user_by_username_state_notifier.dart';
-import '../application/analyse_posts/analyse_posts_state_notifier.dart';
+
 part 'http_providers.dart';
 part 'service_providers.dart';
 part 'state_notifiers.dart';

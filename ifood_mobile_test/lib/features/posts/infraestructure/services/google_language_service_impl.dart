@@ -2,10 +2,10 @@ import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
 
-import '../http_config/http_google_language_decorator.dart';
 import '../../domain/entities/sentiment_entity.dart';
 import '../../domain/failures/analyse_text_failure.dart';
 import '../../domain/services/google_language_service.dart';
+import '../http_config/http_google_language_decorator.dart';
 import '../models/sentiment_model.dart';
 
 class GoogleLanguageServiceImpl implements GoogleLanguageService {
