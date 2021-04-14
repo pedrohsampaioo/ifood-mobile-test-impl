@@ -17,8 +17,8 @@ class SentimentModel extends SentimentEntity {
 
   factory SentimentModel.fromJson(Map<String, dynamic> json) {
     final sentence = json['sentences'][0];
-    final score = sentence['sentiment']['score'];
-    final magnitude = sentence['sentiment']['magnitude'];
+    final score = (sentence['sentiment']['score'] as num).toDouble();
+    final magnitude = (sentence['sentiment']['magnitude'] as num).toDouble();
     final content = sentence['text']['content'];
     final language = json['language'];
     return SentimentModel(
