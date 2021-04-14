@@ -54,6 +54,26 @@ main() {
         verify(() => _httpClient.get(urlUri));
         expect(result, isA<Right<GetPostsByIdFailure, List<PostEntity>>>());
       });
+
+      test(
+          'A List<PostEntity> void must be returned'
+          ' when the http call has code 200 and to returned a reply with no post',
+          () async {
+        final successString = fixtureReader(
+          'features/infraestructure/services/twitter_service/get_posts_by_id_no_posts_200.json',
+        );
+        final successResponse = Response(
+          successString,
+          200,
+          headers: headers,
+        );
+        when(() => _httpClient.get(urlUri))
+            .thenAnswer((_) async => successResponse);
+        final result = await _service.getPostsById(id);
+        verify(() => _httpClient.get(urlUri));
+        expect(result, isA<Right<GetPostsByIdFailure, List<PostEntity>>>());
+        expect(result.fold((_) => false, (list) => list.isEmpty), true);
+      });
     });
 
     group('failure cases', () {
@@ -235,6 +255,29 @@ main() {
           ),
         );
       });
+    });
+
+    test(
+        'A userNotFound must be returned'
+        ' when the http call has no code 200 and the server responds with'
+        ' Forbidden', () async {
+      final failureBody = fixtureReader(
+        'features/infraestructure/services/twitter_service/get_user_by_name_user_suspended_200.json',
+      );
+      final failureResponse = Response(
+        failureBody,
+        200,
+      );
+      when(() => _httpClient.get(urlUri))
+          .thenAnswer((_) async => failureResponse);
+      final result = await _service.getUserByUsername(username);
+      verify(() => _httpClient.get(urlUri));
+      expect(
+        result,
+        Left<GetUserByUsernameFailure, List<PostEntity>>(
+          GetUserByUsernameFailure.userNotFound(),
+        ),
+      );
     });
   });
 }

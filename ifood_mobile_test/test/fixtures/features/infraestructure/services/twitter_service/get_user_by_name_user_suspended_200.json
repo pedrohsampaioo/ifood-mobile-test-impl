@@ -1,0 +1,13 @@
+{
+    "errors": [
+        {
+            "parameter": "username",
+            "resource_id": "d",
+            "value": "d",
+            "detail": "User has been suspended: [d].",
+            "title": "Forbidden",
+            "resource_type": "user",
+            "type": "https://api.twitter.com/2/problems/resource-not-found"
+        }
+    ]
+}

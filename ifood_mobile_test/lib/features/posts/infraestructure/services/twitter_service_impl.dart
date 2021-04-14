@@ -26,6 +26,8 @@ class TwitterServiceImpl extends TwitterService {
     if (response.statusCode == 200) {
       final json = jsonDecode(response.body) as Map<String, dynamic>;
       if (!json.containsKey('errors')) {
+        final amountPosts = json['meta']['result_count'] as int;
+        if (amountPosts <= 0) return right([]);
         final postsJson = jsonDecode(response.body)['data'] as List<dynamic>;
         final posts = postsJson
             .map<PostModel>(
@@ -60,9 +62,11 @@ class TwitterServiceImpl extends TwitterService {
         final user = UserModel.fromJson(json['data']);
         return right(user);
       }
-      final isUserNotFound = List<Map<String, dynamic>>.from(json['errors'])
-          .map<String>((value) => value['title'])
-          .contains('Not Found Error');
+      final errorsListing = List<Map<String, dynamic>>.from(json['errors'])
+          .map<String>((value) => value['title']);
+      final isUserNotFound = errorsListing
+          .join(',')
+          .contains(RegExp(r'Forbidden|Not Found Error'));
       if (isUserNotFound) {
         return left(GetUserByUsernameFailure.userNotFound());
       }
