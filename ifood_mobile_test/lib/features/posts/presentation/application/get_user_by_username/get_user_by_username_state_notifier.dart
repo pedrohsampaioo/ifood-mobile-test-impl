@@ -16,6 +16,10 @@ class GetUserByUsernameStateNotifier
     this._usecase,
   ) : super(GetUserByUsernameState.started());
 
+  void emitLoadInProgress() {
+    state = GetUserByUsernameState.loadInProgress();
+  }
+
   Future<void> fetch(String username) async {
     state = GetUserByUsernameState.loadInProgress();
     final params = GetUserByUsernameParams(username: username);

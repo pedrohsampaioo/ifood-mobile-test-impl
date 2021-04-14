@@ -8,6 +8,6 @@ abstract class AppTheme {
   static ThemeData get config => ThemeData(
         textTheme: GoogleFonts.ubuntuTextTheme(),
         primaryColor: AppColors.blue,
-        accentColor: AppColors.lightGray,
+        accentColor: AppColors.blue,
       );
 }

@@ -1,12 +1,37 @@
-import 'package:flutter/material.dart';
-import 'package:ifood_mobile_test/features/posts/presentation/widgets/post_widget.dart';
-import 'package:ifood_mobile_test/features/posts/presentation/widgets/search_text_field_widget.dart';
-import 'package:ifood_mobile_test/shared/theme/app_theme.dart';
-import 'package:ifood_mobile_test/shared/utils/handle_keyboard.dart';
+import 'dart:async';
 
-class HomePage extends StatelessWidget {
+import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+import '../../../../shared/theme/app_theme.dart';
+import '../../../../shared/utils/handle_keyboard.dart';
+import '../application/get_user_by_username/get_user_by_username_state_notifier.dart';
+import '../components/listing_of_posts_component.dart';
+import '../providers/providers.dart';
+import '../widgets/search_text_field_widget.dart';
+
+class HomePage extends HookWidget {
+  void _searchTextFieldOnChanged({
+    required TextEditingController controller,
+    required String input,
+    required GetUserByUsernameStateNotifier getUserByUsernameStateNotifier,
+  }) {
+    getUserByUsernameStateNotifier.emitLoadInProgress();
+    Timer(const Duration(seconds: 2), () {
+      if (input == controller.text) getUserByUsernameStateNotifier.fetch(input);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    final getUserByUsernameStateNotifier = useProvider(
+      getUserByUsernameStateNotifierProvider.notifier,
+    );
+    final getPostsByIdStateNotifier = useProvider(
+      getPostsByIdStateNotifierProvider.notifier,
+    );
+    final searchController = useTextEditingController();
     return GestureDetector(
       onTap: () => HandleKeyboard.hide(context),
       child: Scaffold(
@@ -20,48 +45,25 @@ class HomePage extends StatelessWidget {
               const SizedBox(height: 16),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: SearchTextFieldWidget(),
-              ),
-              const SizedBox(height: 16),
-              Expanded(
-                child: ListView(
-                  shrinkWrap: true,
-                  children: [
-                    PostWidget(
-                      text:
-                          'TweetTweetTweetTweetTweetTweetTweetTweetTweetTweetTweetTweet',
-                    ),
-                    PostWidget(
-                      text:
-                          'TweetTweetTweetTweetTweetTweetTweetTweetTweetTweetTweetTweet',
-                      emoji: '😐',
-                    ),
-                    PostWidget(
-                      text: 'Tweet',
-                      emoji: '😐',
-                    ),
-                    PostWidget(
-                      text: 'Tweet',
-                      emoji: '😐',
-                    ),
-                    PostWidget(
-                      text: 'Tweet',
-                      emoji: '😐',
-                    ),
-                    PostWidget(
-                      text: 'Tweet',
-                      emoji: '😐',
-                    ),
-                    PostWidget(
-                      text: 'Tweet',
-                      emoji: '😐',
-                    ),
-                    PostWidget(
-                      text: 'Tweet',
-                      emoji: '😐',
-                    ),
-                  ],
+                child: SearchTextFieldWidget(
+                  controller: searchController,
+                  onChanged: (value) => _searchTextFieldOnChanged(
+                    controller: searchController,
+                    input: value,
+                    getUserByUsernameStateNotifier:
+                        getUserByUsernameStateNotifier,
+                  ),
                 ),
+              ),
+              const SizedBox(height: 32),
+              ListingOfPostsComponent(
+                tryAgain: () =>
+                    getUserByUsernameStateNotifier.fetch(searchController.text),
+                getUserByUsernameStateNotifierProvider:
+                    getUserByUsernameStateNotifierProvider,
+                getPostsByIdStateNotifierProvider:
+                    getPostsByIdStateNotifierProvider,
+                getPostsByIdStateNotifier: getPostsByIdStateNotifier,
               ),
             ],
           ),

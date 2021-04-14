@@ -1,19 +1,20 @@
 part of 'providers.dart';
 
-final getUserByUsernameStateNotifierProvider =
-    Provider<GetUserByUsernameStateNotifier>((ref) {
-  final getUserByUsername = ref.watch(getUserByUsernameProvider);
-  return GetUserByUsernameStateNotifier(getUserByUsername);
-});
+final getUserByUsernameStateNotifierProvider = StateNotifierProvider<
+    GetUserByUsernameStateNotifier, GetUserByUsernameState>(
+  (ref) => GetUserByUsernameStateNotifier(
+    ref.watch(getUserByUsernameProvider),
+  ),
+);
 
 final getPostsByIdStateNotifierProvider =
-    Provider<GetPostsByIdStateNotifier>((ref) {
+    StateNotifierProvider<GetPostsByIdStateNotifier, GetPostsByIdState>((ref) {
   final getPostsById = ref.watch(getPostsByIdProvider);
   return GetPostsByIdStateNotifier(getPostsById);
 });
 
-final analysePostsStateNotifierProvider =
-    Provider<AnalysePostsStateNotifier>((ref) {
+final analysePostsStateNotifierProvider = StateNotifierProvider.family<
+    AnalysePostsStateNotifier, AnalysePostsState, String>((ref, id) {
   final analysePostsByText = ref.watch(analysePostsByTextProvider);
   return AnalysePostsStateNotifier(analysePostsByText);
 });
